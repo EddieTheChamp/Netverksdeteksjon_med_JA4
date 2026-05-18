@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "prototype"))
 
 _ROOT = Path(__file__).resolve().parent
 RESULTS_DIR = _ROOT.parent / "results"
-IMAGES_DIR = _ROOT.parent / "thesis_figures"
+IMAGES_DIR = RESULTS_DIR
 
 def load_results(filename: str):
     path = RESULTS_DIR / filename
