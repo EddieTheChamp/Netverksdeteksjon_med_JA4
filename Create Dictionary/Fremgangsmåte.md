@@ -2,6 +2,8 @@
 Powershell må konfigureres til å kjøre skript. Kjør som administrator og svar [A] (yes to all):\
 ```Set-ExecutionPolicy RemoteSigned```\
 (Ved RemoteSigned må ps1-scriptet være redigert lokalt, kan sette Unrestricted for å kjøre skript som er lastet ned uten å redigere det, men er ikke anbefalt)
+Buid zeek-ja4 docker image (må kjøres i katalogen hvor Dockerfile ligger (se README der)):\
+```docker build -t zeek-ja4 .```
 
 1. Start tshark:\
 ```tshark -i "Ethernet0" -w network_data.pcapng -f "tcp"```

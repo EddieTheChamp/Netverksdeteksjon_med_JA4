@@ -57,7 +57,7 @@ def get_fields_from_log(log_path):
     return None
 
 def main():
-    parser = argparse.ArgumentParser(description="Extracts JA4, JA4s, JA4t, JA4ts from Zeek SSL and Conn logs to JSON stdout.")
+    parser = argparse.ArgumentParser(description="Extracts JA4, JA4S, JA4TS from Zeek SSL and Conn logs to JSON stdout.")
     parser.add_argument("--ssl", required=True)
     parser.add_argument("--conn")
     parser.add_argument(
@@ -71,7 +71,7 @@ def main():
     args = parser.parse_args()
 
     # 1. Forbered Conn-data (hvis filen finnes)
-    # Vi lager en dictionary: { "UID": {"ja4t": "...", "ja4ts": "..."} }
+    # Vi lager en dictionary: { "UID": {"ja4ts": "..."} }
     conn_map = {}
     if args.conn:
         conn_fields = get_fields_from_log(args.conn)
@@ -86,7 +86,6 @@ def main():
                         uid = c_entry.get("uid")
                         if uid:
                             conn_map[uid] = {
-                                "ja4t": c_entry.get("ja4t"),
                                 "ja4ts": c_entry.get("ja4ts")
                             }
 
@@ -124,7 +123,6 @@ def main():
                 "JA4_r": clean_value(ssl_entry.get("ja4_r")),
                 "JA4S": clean_value(ssl_entry.get("ja4s")),
                 "JA4S_r": clean_value(ssl_entry.get("ja4s_r")),
-                "JA4T": clean_value(extra_data.get("ja4t")),
                 "JA4TS": clean_value(extra_data.get("ja4ts")),
                 "domain": clean_value(ssl_entry.get("server_name")),
             }
