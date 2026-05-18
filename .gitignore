@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Machine learning models (trained weights)
+*.pkl
+*.pickle
+*.joblib
+Modeller/data/models/
+
+# Results and datasets (large JSON files)
+*.json
+Modeller/results/*.json
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+Desktop.ini

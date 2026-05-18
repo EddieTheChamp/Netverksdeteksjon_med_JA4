@@ -1,0 +1,16 @@
+# JA4+ Classification Prototype
+# Installs dependencies used across the active prototype and the legacy analysis scripts.
+# System dependencies like Wireshark/TShark are not managed by pip.
+
+# Active prototype / current/
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.4
+
+# Legacy analysis and visualization / Dictionary/
+matplotlib>=3.8
+seaborn>=0.13
+
+# Legacy iteration 4 model experiments / Dictionary/Iteration4/
+xgboost>=2.0
+catboost>=1.2
